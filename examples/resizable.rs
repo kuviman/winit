@@ -29,6 +29,10 @@ fn main() {
                     println!("Resizable: {}", resizable);
                     window.set_resizable(resizable);
                 }
+                winit::WindowEvent::Resized(new_size) => {
+                    println!("Resized to {:?}", new_size);
+                    println!("inner_size: {:?}", window.get_inner_size());
+                }
                 _ => (),
             },
             _ => (),
